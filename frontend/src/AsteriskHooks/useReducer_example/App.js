@@ -1,11 +1,11 @@
-import { useReducer } from './useReducer_From_Scratch';
+import { useReducer } from 'react';
 import { initialState, messengerReducer } from './messengerReducer';
 import ContactList from './ContactList';
 import Chat from './Chat';
 
-export function App() {
+export default function Messenger() {
     const [state, dispatch] = useReducer(messengerReducer, initialState);
-    const message = state.messages?.[state.selectedId];
+    const message = state.message;
     const contact = contacts.find(c => c.id === state.selectedId);
     return (
         <div>
