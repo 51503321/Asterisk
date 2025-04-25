@@ -5,29 +5,29 @@
 // => Transform syntax
 
 // Babel Input: ES2015 arrow function
-[1, 2, 3].map((n) => n + 1);
+[1, 2, 3].map(n => n + 1);
 
 // Babel Output: ES5 equivalent
 [1, 2, 3].map(function (n) {
-  return n + 1;
+    return n + 1;
 });
 
 // Babel Input: React component with JSX:
 function MyComponent() {
-  return (
-    <div>
-      <h1>Hello, React!</h1>
-      <p>This is JSX.</p>
-    </div>
-  );
+    return (
+        <div>
+            <h1>Hello, React!</h1>
+            <p>This is JSX.</p>
+        </div>
+    );
 }
 
 // Babel Output: Transform above JSX into JavaScript:
 function MyComponent() {
-  return React.createElement(
-    "div",
-    null,
-    React.createElement("h1", null, "Hello, React!"),
-    React.createElement("p", null, "This is JSX."),
-  );
+    return React.createElement(
+        'div',
+        null,
+        React.createElement('h1', null, 'Hello, React!'),
+        React.createElement('p', null, 'This is JSX.'),
+    );
 }
