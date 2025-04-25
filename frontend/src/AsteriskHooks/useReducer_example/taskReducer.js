@@ -1,20 +1,20 @@
 export default function taskReducer(tasks, action) {
-  switch (action.type) {
-    case "added":
-      return [...tasks, { id: action.id, name: action.name, done: false }];
-    case "changed":
-      return tasks.map((t) => {
-        if (t.id === action.id) {
-          return action.task;
-        } else {
-          return t;
+    switch (action.type) {
+        case 'added':
+            return [...tasks, { id: action.id, name: action.name, done: false }];
+        case 'changed':
+            return tasks.map(t => {
+                if (t.id === action.id) {
+                    return action.task;
+                } else {
+                    return t;
+                }
+            });
+        case 'deleted': {
+            return tasks.filter(t => t.id !== action.id);
         }
-      });
-    case "deleted": {
-      return tasks.filter((t) => t.id !== action.id);
+        default: {
+            throw Error('Unknown action: ' + action.type);
+        }
     }
-    default: {
-      throw Error("Unknown action: " + action.type);
-    }
-  }
 }
