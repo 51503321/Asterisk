@@ -21,15 +21,13 @@ console.log(obj1 === obj3); // true
 const o1 = { a: 1 };
 const o2 = { b: 2 };
 const o3 = { c: 3 };
-const obj = Object.assign(o1, o2, o3);
-// obj is {a: 1, b:2, c:3}
+const obj = Object.assign(o1, o2, o3); // obj is {a: 1, b:2, c:3}
 
 // - Merging objects with same properties
 const o11 = { a: 1, b: 1, c: 1 };
 const o21 = { b: 2, c: 2 };
 const o31 = { c: 3 };
-const obj11 = Object.assign({}, o11, o21, o13);
-// obj11 is { a: 1, b: 2, c: 3 };
+const obj11 = Object.assign({}, o11, o21, o31); // obj11 is { a: 1, b: 2, c: 3 };
 
 // - Primitives will be wrapped to objects
 // Primitives will be wrapped, null and undefined will be ignored.
@@ -38,8 +36,7 @@ const v1 = 'abc'; // primitive
 const v2 = true; // primitive
 const v3 = 10; //primitive
 const v4 = Symbol('foo'); // symbol;
-const obj111 = Object.assign({}, v1, null, v2, undefined, v3, v4);
-console.log(obj111); // { "0": "a", "1": "b", "2": "c" }
+const obj111 = Object.assign({}, v1, null, v2, undefined, v3, v4); // { "0": "a", "1": "b", "2": "c" }
 
 const number = Object.assign(3, { a: 1 });
 console.log(number); // Number {3, a: 1}
@@ -61,9 +58,9 @@ const target1 = Object.defineProperty({}, 'foo', {
 }); // target.foo is a read-only property
 
 Object.assign(target1, { bar: 2 }, { foo2: 3, foo: 3, foo3: 3 }, { baz: 4 });
-console.log(target.bar); // 2, the first source was copied successfully.
-console.log(target.foo2); // 3, the first property of the second source was copied successfully.
-console.log(target.foo); // 1, exception is thrown here.
-console.log(target.foo3); // undefined, assign method has finished, foo3 will not be copied.
-console.log(target.baz); // undefined, the third source will not be copied either.
+console.log(target1.bar); // 2, the first source was copied successfully.
+console.log(target1.foo2); // 3, the first property of the second source was copied successfully.
+console.log(target1.foo); // 1, exception is thrown here.
+console.log(target1.foo3); // undefined, assign method has finished, foo3 will not be copied.
+console.log(target1.baz); // undefined, the third source will not be copied either.
 // => thực tế khi compile thì đã lỗi ngay từ console.log đầu tiên

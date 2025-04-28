@@ -1,10 +1,12 @@
 // Babel is a JavaScript compiler
 // Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript
 // in current and older browsers or environments.
-// => Babel takes JavaScript code written in one version (usually a newer, more feature-rich version like ES6+ or even experimental proposals) and converts it into equivalent JavaScript code that can run in older JavaScript environments
+// => Babel takes JavaScript code written in one version (usually a newer, more feature-rich version like ES6+ or even experimental proposals)
+// and converts it into equivalent JavaScript code that can run in older JavaScript environments
 // => Transform syntax
+// qua 2016 cho đến 2024 thì gọi là ECMAScript 2016 - ECMAScript 2024
 
-// Babel Input: ES2015 arrow function
+// Babel Input: ES2015 arrow function(or ECMAScript 6 or ES6)
 [1, 2, 3].map(n => n + 1);
 
 // Babel Output: ES5 equivalent
