@@ -1,0 +1,6 @@
+@Asterisk.MyTek_HostAddress = http://localhost:5144
+
+GET {{Asterisk.MyTek_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
