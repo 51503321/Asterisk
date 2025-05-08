@@ -1,7 +1,7 @@
 ﻿using Asterisk.MyTek.Entity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LearnNote.Common
+namespace Asterisk.MyTek.LearnNote.Common
 {
     public class Common_P1
     {
@@ -22,7 +22,7 @@ namespace LearnNote.Common
             var (_, _, _, pop1, _, pop2) = QueryCityDataForYears("New York City", 1960, 2010);
             var p = new Person();
             var (fname, _, city, _) = p;
-            p.FirstName = "cu";
+            p.FirstName = "cu"; // ?? still doing this ...
         }
     }
 }

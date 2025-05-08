@@ -1,8 +1,12 @@
-﻿namespace LearnNote.REST
+﻿namespace Asterisk.MyTek.LearnNote.REST
 {
+    /*
+     * REST là một khái niệm kiến trúc, một tập hợp các nguyên tắc.
+     * RESTful là một thuộc tính, mô tả một API hoặc dịch vụ web tuân theo các nguyên tắc của REST.
+     */
     class REST
     {
-        public static void Main()
+        public static void MainA()
         {
             /* REST(REpresentational State Transfer)
                 - is an architectural style.

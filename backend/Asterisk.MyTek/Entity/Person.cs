@@ -15,7 +15,7 @@
 
         public void Deconstruct(out string fname, out string lname)
         {
-            fname = FirstName; // tại sao ko viết ngược lại, FirstName = fname
+            fname = FirstName;
             lname = LastName;
         }
 
