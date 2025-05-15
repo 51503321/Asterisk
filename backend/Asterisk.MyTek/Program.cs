@@ -10,7 +10,6 @@ public class Program
         WebApplication app = builder.Build();
         app.MapGet("/", () =>
         {
-            Solution.MainSolution();
         });
         app.Run();
     }

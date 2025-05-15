@@ -29,12 +29,11 @@ let arr2 = [0, 1, 2];
 function myFun(a, b, ...leftOver) {
     return [a, b, 3, ...leftOver];
 }
-arr2 = merge(...arr2); // arr2 = [0, 1, 3, 2]
+arr2 = myFun(...arr2); // [0, 1, 3, 2]
 
-const sumArr = [1, 2, 3].reduce(add, 0); // with initial value to avoid when the array is empty
-// sumArr = 6
+const sumArr = [1, 2, 3].reduce(add, 0); // with initial value to avoid when the array is empty, sumArr = 6
 
+// accumulator là biến cộng dồn
 function add(accumulator, a) {
-    // accumulator là biến cộng dồn
     return accumulator + a;
 }

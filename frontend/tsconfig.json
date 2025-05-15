@@ -1,0 +1,12 @@
+{
+    "compilerOptions": 
+    {
+        "jsx": "react-jsx", /* import React from 'react' => no need */
+        "allowSyntheticDefaultImports": true, /* When set to true, you can use the default import syntax(import Something from 'module'), even if the 'module' doesn't actually define a default export*/
+        "paths": {
+            "~/*": ["./src/*"],
+            "@type/*": ["./src/types/*"], /* Any import that starts with @type will be resolved relative to your src/types, vd: import UserType from '@type/user';*/
+            "react": ["./node_modules/@types/react"]
+        }
+    },
+}
