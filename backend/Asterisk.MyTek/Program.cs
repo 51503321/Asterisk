@@ -1,5 +1,3 @@
-using Asterisk.MyTek.HackerRank;
-
 namespace Asterisk.MyTek;
 
 public class Program

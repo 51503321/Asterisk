@@ -14,4 +14,9 @@ public static class Common_P1
         foreach (var i in input)
             action(i);
     }
+
+    /* i++ and ++i
+     * 
+     */
+
 }

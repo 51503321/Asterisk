@@ -1,6 +1,15 @@
-﻿/*
- * static
-    * Được khởi tạo 1 lần duy nhất ngay khi biên dịch chương trình.
+﻿/* Static:
+ * Được khởi tạo 1 lần duy nhất ngay khi biên dịch chương trình.
+ *
+ * Extension method:
+    * This is particularly useful when you want to add new functionality to a type you don't own or can't change,
+like types from third-party libraries or built-in .NET types such as string, List<T>, and so on.
+
+ * Extension methods need to be in a static class because:
+    * No Object Needed: You don’t need to create an object to use an extension method.
+Since the method adds new functionality to an existing type (like string), it can work without needing an instance of the class.
+    * Organized Code: Putting extension methods in a static class keeps things tidy(ngăn nắp). It allows you to group related methods, 
+and you can easily include them in your code by using the appropriate namespace.
  */
 
 using Asterisk.MyTek.Extensions;
@@ -59,7 +68,6 @@ public class StaticExample
     public string SetMauChuDao()
     {
         /* switch expression */
-
         DateTime now = DateTime.UtcNow;
         return now.DayOfWeek switch
         {
@@ -77,7 +85,6 @@ public class StaticExample
     public string SetMauChuDaoAnotherVersion(DayOfWeek dayOfWeek) => dayOfWeek switch
     {
         /* switch expression */
-
         DayOfWeek.Friday => "Black",
         DayOfWeek.Monday => "Blue",
         DayOfWeek.Saturday => "Green",
@@ -96,7 +103,6 @@ public class StaticExample
          */
 
         /* switch statement */
-        /* */
         DateTime now = DateTime.UtcNow;
         switch (now.DayOfWeek)
         {
