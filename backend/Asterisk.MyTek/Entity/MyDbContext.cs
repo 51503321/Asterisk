@@ -12,7 +12,7 @@ public class MyDbContext(DbContextOptions<MyDbContext> options) : DbContext(opti
 
         modelBuilder.Entity<Challenge>()
             .HasMany(x => x.ChallengeConfigs)
-            .WithOne()
+            .WithOne(x => x.Challenge)
             .HasForeignKey(x => x.ChallengeId);
     }
 }
