@@ -1,4 +1,6 @@
+using Asterisk.MyTek.Entity;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 
 namespace Asterisk.MyTek;
 
@@ -8,16 +10,17 @@ public class Program
     {
         WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-        // adds the necessary services for web API controllers to your application.
+        var redisConnectionString = builder.Configuration.GetConnectionString("Redis");
+        if (!string.IsNullOrWhiteSpace(redisConnectionString))
+        {
+            builder.Services.AddSingleton<IConnectionMultiplexer>(sp => ConnectionMultiplexer.Connect(redisConnectionString));
+        }
+
         builder.Services.AddControllers();
+        builder.Services.AddDbContext<MyDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-        builder.Services.AddDbContext<MyDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-        // Adds services required to generate the Swagger / OpenAPI specification document
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
-
         WebApplication app = builder.Build();
         if (app.Environment.IsDevelopment())
         {
@@ -25,7 +28,7 @@ public class Program
             app.UseSwaggerUI();
         }
 
-        app.MapControllers(); // MapControllers configures the web API controller actions in your app as endpoints
+        app.MapControllers();
         app.Run();
     }
 }
