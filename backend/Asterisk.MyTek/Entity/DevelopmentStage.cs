@@ -1,8 +1,8 @@
 ﻿namespace Asterisk.MyTek.Entity;
 
-public class Challenge
+public class DevelopmentStage
 {
     public Guid Id { get; set; }
-    public List<ChallengeConfig> ChallengeConfigs { get; set; }
+    public string Name { get; set; }
     public List<MappingChallenge> MappingChallenges { get; set; }
 }
